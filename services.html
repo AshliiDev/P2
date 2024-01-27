@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Dashboard</title>
+    <meta name="viewport" content="width=1240,shrink-to-fit=no">
+    <title>AT YOUR SERVICE</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
     <style>
@@ -61,7 +61,7 @@
 
         .dashboard {
             position: fixed;
-            margin-top: -5%;
+            margin-top: 0%;
             left: -250px;
             width: 250px;
             background-color: #1c0d06;
@@ -95,31 +95,7 @@
             vertical-align: middle;
         }
 
-        .content-section {
-            padding: 20px;
-            color: #fff;
-            margin-left: 4%;
-            font-size: 25px;
-            line-height: 1.2;
-            margin-top: 10%;
-            letter-spacing: 2px;
-        }
-
-        .content-section .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #df6732;
-            color: #000000;
-            text-decoration: none;
-            border-radius: 8px;
-            font-size: 16px;
-            transition: background-color 0.3s;
-            border: 3px solid #1c0d06;
-        }
-
-        .content-section .btn:hover {
-            background-color: #fff;
-        }
+        
 
         .content-section-2 {
             padding: 20px;
@@ -152,7 +128,7 @@
 
         .slick-frame.expanded .description {
             display: block;
-            padding: 10px; /* Adjusted padding based on image size */
+            padding: 10px; 
         }
 
         .slick-frame img {
@@ -166,32 +142,36 @@
         }
 
         .description {
-            position: relative;
+            position: absolute;
+            bottom: 0;
             left: 50%;
             transform: translateX(-50%);
-            bottom: -10;
-            width: 90%; /* Adjust the width as per your preference */
-            background-color: rgb(255, 255, 255);
+            width: 90%;
+            background-color: rgba(255, 255, 255, 0.838); 
             color: #000000;
             padding: 10px;
             box-sizing: border-box;
             display: none;
+            text-align: center;
 }
 
-        .description button {
+        .description .button {
             display: inline-block;
-            margin: 10px;
-            padding: 5px 10px;
-            background-color: #fff;
-            color: #3498db;
-            border: none;
-            border-radius: 3px;
-            cursor: pointer;
+            padding: 10px 20px;
+            background-color: #df6732;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 12px;
+            transition: background-color 0.3s;
+        }
+        .description .button:hover {
+            background-color: #000000;
         }
 
         .slick-frame.expanded .description {
             display: block;
-            padding: 10px; /* Adjusted padding based on image size */
+            padding: 10px; 
         }
 
         .slick-slide {
@@ -208,12 +188,12 @@
 
         .slick-prev {
             content: '\2190';
-            left: 20px;
+            left: -20px;
         }
 
         .slick-next {
             content: '\2192';
-            right: 20px;
+            right: -20px;
         }
 
         @media screen and (max-width: 768px) {
@@ -254,18 +234,10 @@
 
     <div class="dashboard">
         <a href="Home.html">> Home</a>
-        <a href="LoginP.html">> Login</a>
-        <a href="Sign.html">> Sign Up</a>
-        <a href="#">> Settings</a>
-        <a href="#">> Our Service</a>
-        <a href="#">> Contact Us</a>
-    </div>
-
-    <div class="content-section">
-        <p><h1><b>Having trouble?</b></h1></p>
-        <p><h2>We Are <b>At Your Service!</b></h2></p>
-        <p><h4>Repair estimate for your vehicles</h4></p>
-        <a href="#" class="btn"><b>MAKE APPOINTMENT</b></a>
+        <a href="services.html">> Services</a>
+        <a href="contact.html">> Contact Us</a>
+        <a href="about.html">> About</a>
+        <a href="LoginP.html">> Account</a>
     </div>
 
     <div class="content-section-2">
@@ -273,58 +245,59 @@
     </div>
 
     <div class="slick-carousel">
-        <div class="slick-frame" onclick="redirectToPage('page1.html')">
+        <div class="slick-frame">
             <img src="service1.jpg" alt="Slide 1">
             <div class="description">
-                <h3>Description 1</h3>
-                <p>This is the description for slide 1.</p>
-                <button onclick="redirectToPage('page1.html')">Reserve</button>
-                <button onclick="redirectToPage('page1.html')">Book</button>
+                <h3>Oil and Fluid Service</h3>
+                <p>Regular oil changes are essential for maintaining the health of a vehicle's engine. This service involves draining old oil, replacing the oil filter, and adding new, clean oil.</p>
+                <a href="reserve.html" class="button"><b>Reserve</b></a>
+                <a href="book.html" class="button"><b>Book</b></a>
             </div>
         </div>
-        <div class="slick-frame" onclick="redirectToPage('page2.html')">
+        <div class="slick-frame">
             <img src="service2.jpeg" alt="Slide 2">
-            <div class="description">
-                <h3>Description 2</h3>
-                <p>This is the description for slide 2.</p>
-                <button onclick="redirectToPage('page2.html')">Reserve</button>
-                <button onclick="redirectToPage('page2.html')">Book</button>
+            <div class="description" style="left: 50%; transform: translateX(-48%); width: 100%;">
+                <h3>Brake System Maintenance and Repair Service</h3>
+                <p>Brake systems are crucial for vehicle safety. A repairment service can inspect, repair, or replace brake pads, rotors, and other components to ensure proper braking performance.</p>
+                <a href="reserve.html" class="button"><b>Reserve</b></a>
+                <a href="book.html" class="button"><b>Book</b></a>
             </div>
         </div>
         <div class="slick-frame" onclick="redirectToPage('page3.html')">
             <img src="service3.webp" alt="Slide 3">
             <div class="description">
-                <h3>Description 3</h3>
-                <p>This is the description for slide 3.</p>
-                <button onclick="redirectToPage('page3.html')">Reserve</button>
-                <button onclick="redirectToPage('page3.html')">Book</button>
+                <h3>Tire Services</h3>
+                <p>Offering tire replacement, rotation, alignment, and repair services to ensure that the vehicle's tires are in good condition for optimal safety and performance.</p>
+                <a href="reserve.html" class="button"><b>Reserve</b></a>
+                <a href="book.html" class="button"><b>Book</b></a>
             </div>
         </div>
         <div class="slick-frame" onclick="redirectToPage('page4.html')">
             <img src="service4.jpg" alt="Slide 4">
             <div class="description">
-                <h3>Description 4</h3>
-                <p>This is the description for slide 4.</p>
-                <button onclick="redirectToPage('page4.html')">Reserve</button>
-                <button onclick="redirectToPage('page4.html')">Book</button>
+                <h3>Diagnostic Services</h3>
+                <p>We identify and troubleshoot issues with the vehicle through advanced diagnostic tools and technology and conduct computerized engine diagnostics to pinpoint problems.
+                </p>
+                <a href="reserve.html" class="button"><b>Reserve</b></a>
+                <a href="book.html" class="button"><b>Book</b></a>
             </div>
         </div>
         <div class="slick-frame" onclick="redirectToPage('page5.html')">
             <img src="service5.png" alt="Slide 5">
-            <div class="description">
-                <h3>Description 5</h3>
-                <p>This is the description for slide 5.</p>
-                <button onclick="redirectToPage('page5.html')">Reserve</button>
-                <button onclick="redirectToPage('page5.html')">Book</button>
+            <div class="description" style="left: 50%; transform: translateX(-48%); width: 100%;">
+                <h3>Battery and Charging System Services</h3>
+                <p>We conduct battery voltage and load tests to assess the health of the vehicle's battery and recommending battery replacements if the current one is weak, damaged, or no longer holding a charge.</p>
+                <a href="reserve.html" class="button"><b>Reserve</b></a>
+                <a href="book.html" class="button"><b>Book</b></a>
             </div>
         </div>
         <div class="slick-frame" onclick="redirectToPage('page6.html')">
             <img src="service6.jpg" alt="Slide 6">
-            <div class="description">
-                <h3>Description 6</h3>
-                <p>This is the description for slide 6.</p>
-                <button onclick="redirectToPage('page6.html')">Reserve</button>
-                <button onclick="redirectToPage('page6.html')">Book</button>
+            <div class="description" style="bottom: 5%;">
+                <h3>Suspension and Steering Repairs</h3>
+                <p>We check and replace worn-out suspension components such as bushings, ball joints, or struts. Align the wheels and balance the tires.</p>
+                <a href="reserve.html" class="button"><b>Reserve</b></a>
+                <a href="book.html" class="button"><b>Book</b></a>
             </div>
         </div>
     </div>
@@ -372,7 +345,6 @@
                 }
             });
 
-            // Redirect on button click
             $('.description button').on('click', function(e) {
                 e.stopPropagation();
                 var url = $(this).closest('.slick-frame').data('href');

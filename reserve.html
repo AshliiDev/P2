@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<head>
+    <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -17,8 +19,8 @@ body {
 
 .container {
     position: fixed;
-    bottom: 15%;
-    height: 55%;
+    bottom: 3%;
+    height: 70%;
     right: 25%; /* Move container to the right side */
     transform: translateX(50%); /* Center the container horizontally */
     width: 30%; /* Adjusted width for responsiveness */
@@ -54,14 +56,15 @@ body {
         font-weight: bold;
     }
 
-    input[type="email"],
-    input[type="password"] {
-        width: 100%;
-        padding: 8px;
-        margin-top: 5px;
-        border-radius: 5px;
-        border: 1px solid #ccc;
-    }
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
 
     button {
         padding: 15px; /* Adjusted padding for larger height */
@@ -126,7 +129,7 @@ body {
 
 .dashboard {
     position: fixed;
-    margin-top: -260px;
+    margin-top: -230px;
     left: -250px;
     width: 250px;
     background-color: #1c0d06;
@@ -141,7 +144,7 @@ body {
     color: #fff;
     text-decoration: none;
     display: block;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .dashboard a:hover {
@@ -167,6 +170,16 @@ body {
     right: -5%; /* Adjust the right margin as needed */
     vertical-align: middle;
 }
+.login-link {
+        font-size: 14px;
+        text-decoration: none;
+        color: #000000;
+        text-align: center;
+    }
+
+.login-link:hover {
+        text-decoration: underline;
+    }
   </style>
 </head>
 <body>
@@ -181,8 +194,8 @@ body {
 <div class="dashboard">
   <a href="Home.html">> Home</a>
   <a href="services.html">> Services</a>
-  <a href="contact.html">> Contact Us</a>
-  <a href="about.html">> About</a>
+  <a href="*">> Contact Us</a>
+  <a href="*">> About</a>
   <a href="LoginP.html">> Account</a>
 </div>
 
@@ -191,54 +204,74 @@ body {
 </div>
 
 <div class="container">
-  <form id="loginForm" class="login-form">
-    <h2>Login</h2>
+  <form id="signupForm" class="signup-form">
+    <h2>Sign Up</h2>
+    <div class="input-group">
+      <label for="name">Name</label>
+      <input type="text" id="name" required>
+    </div>
     <div class="input-group">
       <label for="email">Email</label>
-      <input type="email" id="email" required placeholder="example@gmail.com">
+      <input type="email" id="email" required>
+    </div>
     <div class="input-group">
       <label for="password">Password</label>
-      <input type="password" id="password" required placeholder="password">
+      <input type="password" id="password" required>
     </div>
-    <button type="submit" onclick="">Login</button>
-    <div class="forgot-signup-container">
-    <a href="resetpass.html" class="forgot-password">Forgot Password?</a>
-    <a href="Sign.html" class="forgot-password">New to At Your Service? Sign Up</a>
+    <div class="input-group">
+      <label for="confirmPassword">Confirm Password</label>
+      <input type="password" id="confirmPassword" required>
     </div>
+    <button type="submit">Sign Up</button>
+    <a href="LoginP.html" class="login-link">Already have an account? Login</a>
   </form>
 </div>
 
-  <script>
-  document.getElementById("loginForm").addEventListener("submit", function(event) {
-    event.preventDefault();
-    const loginEmail = document.getElementById("email").value;
-    const loginPassword = document.getElementById("password").value;
-  
-    // Retrieve user data from localStorage
-    const savedUserData = JSON.parse(localStorage.getItem("userData"));
-  
-    if (savedUserData && savedUserData.email === loginEmail && savedUserData.password === loginPassword) {
-      // Successful login, redirect to the 'hello world' page
-      window.location.href = "Home.html";
-    } else {
-      alert("Invalid credentials");
-    }
-  });
+<script>
+document.getElementById("signupForm").addEventListener("submit", function(event) {
+event.preventDefault();
+const name = document.getElementById("name").value;
+const email = document.getElementById("email").value;
+const password = document.getElementById("password").value;
+const confirmPassword = document.getElementById("confirmPassword").value;
 
-  function toggleDashboard() {
-            const dashboard = document.querySelector('.dashboard');
-            const navbar = document.querySelector('.navbar h1');
-            const currentLeft = parseInt(getComputedStyle(dashboard).left);
+if (password !== confirmPassword) {
+  alert("Passwords do not match");
+  return;
+}
 
-            if (currentLeft === 0) {
-                dashboard.style.left = '-250px';
-                navbar.classList.remove('dashboard-open');
-            } else {
-                dashboard.style.left = '0';
-                navbar.classList.add('dashboard-open');
-            }
-        }
+const userData = { name, email, password };
+localStorage.setItem("userData", JSON.stringify(userData));
 
-  </script>
+window.location.href = "LoginP.html";
+
+// Perform actions like sending data to a server for account creation
+// Example: Send this data to a backend server using AJAX/fetch
+// Display a success message or redirect to a different page upon successful creation
+console.log("Name:", name);
+console.log("Email:", email);
+console.log("Password:", password);
+});
+function toggleDashboard() {
+          const dashboard = document.querySelector('.dashboard');
+          const navbar = document.querySelector('.navbar h1');
+          const currentLeft = parseInt(getComputedStyle(dashboard).left);
+
+          if (currentLeft === 0) {
+              dashboard.style.left = '-250px';
+              navbar.classList.remove('dashboard-open');
+          } else {
+              dashboard.style.left = '0';
+              navbar.classList.add('dashboard-open');
+          }
+      }
+
+</script>
+</body>
+</html>
+
+</head>
+<body>
+
 </body>
 </html>

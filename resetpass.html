@@ -2,130 +2,171 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Reset Password</title>
+  <meta name="viewport" content="width=1240,shrink-to-fit=no">
+  <title>AT YOUR SERVICE</title>
   <style>
-       body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #120803;
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    background-color: #1c0d06;
 }
-.navbar {
-            background-color: #1c0d06;
-            color: #fff;
-            padding: 10px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-sizing: border-box;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 6px rgba(24, 2, 2, 0.822); /* Add drop shadow */
-
-        }
-
-.navbar h1 {
-            margin: 0;
-            display: flex;
-            align-items: center;
-            font-family: sans-serif;
-        }
-
-.toggle-btn {
-            font-size: 30px;
-            cursor: pointer;
-            margin-right: 20px;
-            width: auto;
-        }
-
-.dashboard {
-            position: fixed;
-            margin-top: -230px;
-            left: -250px;
-            width: 250px;
-            background-color: #1c0d06;
-            color: #fff;
-            padding: 20px;
-            box-sizing: border-box;
-            transition: left 0.5s;
-            box-shadow: 0 4px 6px rgba(24, 2, 2, 0.822); /* Add drop shadow */
-            
-
-        }
-
-.dashboard a {
-            color: #fff;
-            text-decoration: none;
-            display: block;
-            margin-bottom: 10px;
-        }
-
-.dashboard a:hover {
-            text-decoration: underline;
-        }
-
-        .dashboard-open .dashboard {
-            left: 0;
-        }
-
-.logo-img {
-            max-width: 13%;
-            height: auto;
-            margin-right: 15px;
-            margin-top: 1px;
-            vertical-align: middle;
-        }
 
 .container {
-  width: 350px;
-  background-color: #fff;
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    bottom: 15%;
+    height: 55%;
+    right: 25%; /* Move container to the right side */
+    transform: translateX(50%); /* Center the container horizontally */
+    width: 30%; /* Adjusted width for responsiveness */
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.signup-form {
-  display: flex;
-  flex-direction: column;
+/* Add a media query for smaller screens */
+@media only screen and (max-width: 600px) {
+    .container {
+        width: 90%;
+    }
+
+    .logo-img {
+        max-width: 30%; /* Adjusted max-width for smaller screens */
+    }
 }
 
-.input-group {
-  margin-bottom: 15px;
+/* ... (your existing styles) ... */
+
+    .signup-form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .input-group {
+        margin-bottom: 15px;
+    }
+
+    label {
+        font-weight: bold;
+    }
+
+    input[type="email"],
+    input[type="password"] {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+
+    button {
+        padding: 15px; /* Adjusted padding for larger height */
+        border: none;
+        border-radius: 5px;
+        background-color: #df6732;
+        color: #fff;
+        cursor: pointer;
+        width: 100%; /* Make the button full-width */
+        margin-bottom: 10px; /* Add margin below the button */
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+
+    .forgot-signup-container {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 5px;
+    }
+
+    .forgot-password,
+    .signup-link {
+        font-size: 14px;
+        text-decoration: none;
+        color: #000000;
+    }
+
+    .forgot-password:hover,
+    .signup-link:hover {
+        text-decoration: underline;
+    }
+.navbar {
+    background-color: #1c0d06;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(24, 2, 2, 0.822); /* Add drop shadow */
 }
 
-label {
-  font-weight: bold;
+.navbar h1 {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    font-family: sans-serif;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="password"] {
-  width: 100%;
-  padding: 8px;
-  margin-top: 5px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
+.toggle-btn {
+    font-size: 30px;
+    cursor: pointer;
+    margin-right: 20px;
+    width: auto;
 }
 
-button {
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  background-color: #df6732;
-  color: #fff;
-  cursor: pointer;
+.dashboard {
+    position: fixed;
+    margin-top: -230px;
+    left: -250px;
+    width: 250px;
+    background-color: #1c0d06;
+    color: #fff;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: left 0.5s;
+    box-shadow: 0 4px 6px rgba(24, 2, 2, 0.822); /* Add drop shadow */
 }
 
-button:hover {
-  background-color: #000000;
+.dashboard a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 10px;
 }
 
+.dashboard a:hover {
+    text-decoration: underline;
+}
+
+.dashboard-open .dashboard {
+    left: 0;
+}
+
+.logo-img {
+    max-width: 13%;
+    height: auto;
+    margin-right: 15px;
+    margin-top: 1px;
+    vertical-align: middle;
+}
+.logo-img2 {
+  position: fixed;
+    width: 100%; /* Make the second logo image the same width as the container */
+    height: 50%;
+    margin-top: -10%;
+    right: -5%; /* Adjust the right margin as needed */
+    vertical-align: middle;
+}
   </style>
 </head>
 <body>
@@ -134,80 +175,83 @@ button:hover {
         <div class="toggle-btn" onclick="toggleDashboard()">☰</div>
         <img src="logo2.png" alt="logo2" class="logo-img"> 
         At Your Service
-
     </h1>
 </div>
-  <div class="dashboard">
-    <a href="Home.html">> Home</a>
-    <a href="LoginP.html">> Login</a>
-    <a href="Sign.html">> Sign Up</a>
-    <a href="#">> Settings</a>
-    <a href="#">> Our Service</a>
-    <a href="#">> Contact Us</a>
-    <!-- Add more links as needed -->
-</div>
-  <div class="container">
-    <form id="resetPasswordForm" class="reset-password-form">
-      <h2>Reset Password</h2>
-      <div class="input-group">
-        <label for="resetEmail">Email</label>
-        <input type="email" id="resetEmail" required>
-      </div>
-      <div class="input-group">
-        <label for="newPassword">New Password</label>
-        <input type="password" id="newPassword" required>
-      </div>
-      <div class="input-group">
-        <label for="confirmNewPassword">Confirm New Password</label>
-        <input type="password" id="confirmNewPassword" required>
-      </div>
-      <button type="submit">Reset Password</button>
-    </form>
-  </div>
-  <script>
-    function toggleDashboard() {
-            const dashboard = document.querySelector('.dashboard');
-            const navbar = document.querySelector('.navbar h1');
-            const currentLeft = parseInt(getComputedStyle(dashboard).left);
 
-            if (currentLeft === 0) {
-                dashboard.style.left = '-250px';
-                navbar.classList.remove('dashboard-open');
-            } else {
-                dashboard.style.left = '0';
-                navbar.classList.add('dashboard-open');
-            }
-        }
+<div class="dashboard">
+  <a href="Home.html">> Home</a>
+  <a href="services.html">> Services</a>
+  <a href="contact.html">> Contact Us</a>
+  <a href="about.html">> About</a>
+  <a href="LoginP.html">> Account</a>
+</div>
+
+<div class="logo-img2">
+  <img src="logo.png">
+</div>
+
+<div class="container">
+  <form id="resetPasswordForm" class="reset-password-form">
+    <h2>Reset Password</h2>
+    <div class="input-group">
+      <label for="resetEmail">Email</label>
+      <input type="email" id="resetEmail" required placeholder="example@gmail.com">
+    </div>
+    <div class="input-group">
+      <label for="newPassword">New Password</label>
+      <input type="password" id="newPassword" required placeholder="new password">
+    </div>
+    <div class="input-group">
+      <label for="confirmNewPassword">Confirm New Password</label>
+      <input type="password" id="confirmNewPassword" required placeholder="confirm new password">
+    </div>
+    <button type="submit">Reset Password</button>
+  </form>
+</div>
+<script>
+  function toggleDashboard() {
+          const dashboard = document.querySelector('.dashboard');
+          const navbar = document.querySelector('.navbar h1');
+          const currentLeft = parseInt(getComputedStyle(dashboard).left);
+
+          if (currentLeft === 0) {
+              dashboard.style.left = '-250px';
+              navbar.classList.remove('dashboard-open');
+          } else {
+              dashboard.style.left = '0';
+              navbar.classList.add('dashboard-open');
+          }
+      }
 
 document.getElementById("resetPasswordForm").addEventListener("submit", function(event) {
-  event.preventDefault();
-  const resetEmail = document.getElementById("resetEmail").value;
-  const newPassword = document.getElementById("newPassword").value;
-  const confirmNewPassword = document.getElementById("confirmNewPassword").value;
+event.preventDefault();
+const resetEmail = document.getElementById("resetEmail").value;
+const newPassword = document.getElementById("newPassword").value;
+const confirmNewPassword = document.getElementById("confirmNewPassword").value;
 
-  if (newPassword !== confirmNewPassword) {
-    alert("Passwords do not match");
-    return;
-  }
+if (newPassword !== confirmNewPassword) {
+  alert("Passwords do not match");
+  return;
+}
 
-  // Retrieve user data from localStorage
-  let savedUserData = JSON.parse(localStorage.getItem("userData"));
+// Retrieve user data from localStorage
+let savedUserData = JSON.parse(localStorage.getItem("userData"));
 
-  if (savedUserData && savedUserData.email === resetEmail) {
-    // Reset password only
-    savedUserData.password = newPassword;
+if (savedUserData && savedUserData.email === resetEmail) {
+  // Reset password only
+  savedUserData.password = newPassword;
 
-    // Save updated password to localStorage
-    localStorage.setItem("userData", JSON.stringify(savedUserData));
+  // Save updated password to localStorage
+  localStorage.setItem("userData", JSON.stringify(savedUserData));
 
-    alert("Password has been reset successfully");
+  alert("Password has been reset successfully");
 
-    // Redirect to login page after resetting the password
-    window.location.href = "LoginP.html";
-  } else {
-    alert("Invalid email");
-  }
+  // Redirect to login page after resetting the password
+  window.location.href = "LoginP.html";
+} else {
+  alert("Invalid email");
+}
 }); 
-  </script>
+</script>
 </body>
 </html>

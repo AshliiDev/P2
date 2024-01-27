@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Include necessary meta tags and stylesheets -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <style>
+        /* Add your existing styles */
+    
+        .slick-frame {
+            cursor: pointer;
+            width: 90%;
+            margin: 0 auto 10px;
+            position: relative;
+            overflow: hidden; /* Hide overflow to create an expanding effect */
+            transition: width 0.5s; /* Add transition for smooth effect */
+            border-radius: 10%;
+            background-color: #3498db; /* Change the background color */
+        }
+
+        .slick-frame.expanded {
+            width: 100%; /* Expand to full width when the frame is clicked */
+        }
+
+        .slick-frame img {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border-radius: 6px;
+        }
+
+        .description {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7); /* Adjust background color and transparency */
+            color: #fff;
+            padding: 10px;
+            box-sizing: border-box;
+            display: none;
+            border-bottom-left-radius: 6px;
+            border-bottom-right-radius: 6px;
+        }
+
+        .slick-frame.expanded .description {
+            display: block; /* Show the description when the frame is expanded */
+        }
+
+        .description button {
+            display: block;
+            margin: 10px auto;
+            padding: 5px 10px;
+            background-color: #fff;
+            color: #3498db;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+    </style>
+    
+</head>
+<body>
+
+    <!-- Your existing content (navbar, dashboard, etc.) -->
+
+    <div class="slick-carousel">
+        <div class="slick-frame">
+            <img src="bg.jpg" alt="Slide 1">
+            <div class="description">
+                <h3>Description 1</h3>
+                <p>This is the description for slide 1.</p>
+                <button>Show Description</button>
+            </div>
+        </div>
+        <div class="slick-frame">
+            <img src="bg.jpg" alt="Slide 2">
+            <div class="description">
+                <h3>Description 2</h3>
+                <p>This is the description for slide 2.</p>
+                <button>Show Description</button>
+            </div>
+        </div>
+        <!-- Add more slides with descriptions as needed -->
+    </div>
+
+    <!-- Include necessary scripts (jQuery, Slick Carousel) and your custom script -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.slick-carousel').slick({
+                // Your existing slick settings
+            });
+
+            $('.slick-frame').on('click', function() {
+                // Toggle the 'expanded' class on click
+                $(this).toggleClass('expanded');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -2,21 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Dashboard</title>
+    <meta name="viewport" content="width=1240,shrink-to-fit=no">
+    <title>AT YOUR SERVICE</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
     <style>
+        
         body {
             margin: 0;
             font-family: 'Arial', sans-serif;
-            background-image: url('bg.jpg'); /* Replace with the path to your background image */
+            background-image: url('bg.jpg'); 
             background-size: 100% 100%;
             background-position: center;
             opacity: 95%;
             background-repeat: no-repeat;
-            height: 600px; /* Ensure the body takes up the full height of the viewport */
-            background-color: #120803; /* Set your desired background color */
+            height: 600px; 
+            background-color: #120803; 
 
             
         }
@@ -28,8 +29,8 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(19, 2, 2, 0.473); /* Adjust the alpha value to control the overlay's darkness */
-            z-index: -1; /* Place the overlay behind other elements */
+            background: rgba(19, 2, 2, 0.473); 
+            z-index: -1; 
         }
 
         .navbar {
@@ -44,7 +45,7 @@
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 6px rgba(24, 2, 2, 0.822); /* Add drop shadow */
+            box-shadow: 0 4px 6px rgba(24, 2, 2, 0.822); 
 
         }
 
@@ -72,7 +73,7 @@
             padding: 20px;
             box-sizing: border-box;
             transition: left 0.5s;
-            box-shadow: 0 4px 6px rgba(24, 2, 2, 0.822); /* Add drop shadow */
+            box-shadow: 0 4px 6px rgba(24, 2, 2, 0.822); 
             
 
         }
@@ -103,10 +104,10 @@
     .content-section {
     padding: 20px;
     color: #fff;
-    margin-left: 4%; /* Adjust the value as needed */
-    font-size: 25px; /* Set your desired font size */
-    line-height: 1.2;   /* Set line-height to achieve double spacing */
-    margin-top: 10%; /* Adjust the value as needed */
+    margin-left: 4%; 
+    font-size: 25px; 
+    line-height: 1.2;   
+    margin-top: 10%;
     letter-spacing: 2px;
 
     }
@@ -120,7 +121,7 @@
     border-radius: 8px;
     font-size: 16px;
     transition: background-color 0.3s;
-    border: 3px solid #1c0d06; /* Add border color to the button */
+    border: 3px solid #1c0d06; 
 
 }
 
@@ -131,92 +132,26 @@
 .content-section-2 {
     padding: 20px;
     color: #fff;
-    margin-left: 42%; /* Adjust the value as needed */
-    font-size: 25px; /* Set your desired font size */
-    line-height: 1.2;   /* Set line-height to achieve double spacing */
-    margin-top: 5%; /* Adjust the value as needed */
+    text-align: center; 
+    font-size: 25px;
+    line-height: 1.2;
+    margin-top: 5%;
     letter-spacing: 2px;
 }
 
- /* Add your custom styles here */
- .slick-carousel {
-            width: 80%; /* Adjust the overall width as needed */
-            margin: 0 auto; /* Center the carousel horizontally and place it 10% from the top */
-            margin-top: 20px; /* Adjust the top margin as needed */
-
-        }
-        .slick-slide {
-            text-align: center;
-            padding: 0;
-        }
-        .slick-frame {
-            cursor: pointer;
-            width: 90%; /* Adjust the width as needed */
-            margin: 0 auto 10px; /* Center the frame and add bottom margin */
-            position: relative;
-        }
-        .slick-frame img {
-            width: 90%; /* Make the image fill the frame */
-            height: auto; /* Maintain aspect ratio */      
-            display: block;      
-            margin: 0 auto; /* Center the image */
-        }
-
-        /* Custom styles for arrows */
-        .slick-prev, .slick-next {
-            position: absolute; /* Add absolute positioning */
-            top: 50%; /* Center vertically */
-            transform: translateY(-50%); /* Adjust for vertical centering */
-            z-index: 1; /* Set z-index to appear above the carousel content */
-            cursor: pointer; /* Set cursor to pointer for interaction */
-        }
-
-        .slick-prev {
-            content: '\2190'; /* Unicode arrow character for left arrow */
-        }
-
-        .slick-next {
-            content: '\2192'; /* Unicode arrow character for right arrow */
-        }
-
-        .slick-prev {
-            left: 20px; /* Adjust left position for the previous arrow */
-        }
-
-        .slick-next {
-            right: 20px; /* Adjust right position for the next arrow */
-        }
-        
-        #messenger-logo {
-            position: fixed;
-            bottom: 20px;
-            right: 5px;
-            width: 100px; /* Set the desired width for your logo */
-            height: auto; /* Maintain aspect ratio */
-            cursor: pointer;
-    
-        }
-    
-
-/* Media query for responsiveness */
 @media screen and (max-width: 768px) {
     .content-section {
         padding: 10px;
     }
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .dashboard {
+        margin-left: -250px;
+    }
 }
-
-
-        /* Media query for responsiveness */
-        @media screen and (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .dashboard {
-                margin-left: -250px;
-            }
-        }
     </style>
 </head>
 <body>
@@ -232,12 +167,10 @@
 
     <div class="dashboard">
         <a href="Home.html">> Home</a>
-        <a href="LoginP.html">> Login</a>
-        <a href="Sign.html">> Sign Up</a>
-        <a href="#">> Settings</a>
-        <a href="#">> Our Service</a>
-        <a href="#">> Contact Us</a>
-        <!-- Add more links as needed -->
+        <a href="services.html">> Services</a>
+        <a href="contact.html">> Contact Us</a>
+        <a href="about.html">> About</a>
+        <a href="LoginP.html">> Account</a>
     </div>
 
 
@@ -246,47 +179,9 @@
         <p><h2>We Are <b>At Your Service!</b></h2></p>
         <p><h4>Repair estimate for your vehicles</h4></p>
         <a href="#" class="btn"><b>MAKE APPOINTMENT</b></a>
-        <a href="#" id="messenger-logo-link">
-            <img id="messenger-logo" src="m2logo.png" alt="Messenger Logo">
-        </a>
-    </div>
-
-    <br><br><br>
-    <br><br><br>
-    <br><br><br>
-    <br><br><br>
-
-
-        <!-- Your carousel content goes here -->
-    <div class="slick-carousel">
-        <div class="slick-frame" onclick="redirectToPage('page1.html')">
-            <img src="bg.jpg" alt="Slide 1">
-        </div>
-        <div class="slick-frame" onclick="redirectToPage('page2.html')">
-            <img src="bg.jpg" alt="Slide 2">
-        </div>
-        <div class="slick-frame" onclick="redirectToPage('page3.html')">
-            <img src="bg.jpg" alt="Slide 3">
-        </div>
-        <div class="slick-frame" onclick="redirectToPage('page1.html')">
-            <img src="bg.jpg" alt="Slide 4">
-        </div>
-        <div class="slick-frame" onclick="redirectToPage('page1.html')">
-            <img src="bg.jpg" alt="Slide 5">
-        </div>
-        <div class="slick-frame" onclick="redirectToPage('page1.html')">
-            <img src="bg.jpg" alt="Slide 6">
-        </div>
-        <!-- Add more slides as needed -->
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <script src="your-custom-script.js"></script>
-
-    <div class="content-section-2">
-        <h1>Services</h1>
-    </div>
 
     <script>
         function toggleDashboard() {
@@ -302,28 +197,6 @@
                 navbar.classList.add('dashboard-open');
             }
         }
-
-        // Ensure the messenger logo stays in the bottom right corner when scrolling
-        window.onscroll = function() {
-            var messengerLogo = document.getElementById('messenger-logo');
-            messengerLogo.style.bottom = (20 + window.scrollY) + 'px';
-        }
-        function redirectToPage(pageUrl) {
-            window.location.href = pageUrl;
-        }
-        $(document).ready(function(){
-            $('.slick-carousel').slick({
-                autoplay: true,
-                autoplaySpeed: 5000, /* Set the speed in milliseconds (5 seconds) */
-                dots: true, /* Set to true if you want navigation dots */
-                arrows: true, /* Set to true if you want navigation arrows */
-                infinite: true,
-                speed: 500,
-                slidesToShow: 3,
-                slidesToScroll: 1
-                
-            });
-        });
     </script>
 
 </body>

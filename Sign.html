@@ -2,39 +2,57 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Sign Up</title>
+  <meta name="viewport" content="width=1240,shrink-to-fit=no">
+  <title>AT YOUR SERVICE</title>
   <style>
-    body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #120803;
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    background-color: #1c0d06;
 }
 
 .container {
-  width: 350px;
-  background-color: #fff;
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    bottom: 3%;
+    height: 70%;
+    right: 25%; /* Move container to the right side */
+    transform: translateX(50%); /* Center the container horizontally */
+    width: 30%; /* Adjusted width for responsiveness */
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.signup-form {
-  display: flex;
-  flex-direction: column;
+/* Add a media query for smaller screens */
+@media only screen and (max-width: 600px) {
+    .container {
+        width: 90%;
+    }
+
+    .logo-img {
+        max-width: 30%; /* Adjusted max-width for smaller screens */
+    }
 }
 
-.input-group {
-  margin-bottom: 15px;
-}
+/* ... (your existing styles) ... */
 
-label {
-  font-weight: bold;
-}
+    .signup-form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .input-group {
+        margin-bottom: 15px;
+    }
+
+    label {
+        font-weight: bold;
+    }
 
 input[type="text"],
 input[type="email"],
@@ -46,85 +64,120 @@ input[type="password"] {
   border: 1px solid #ccc;
 }
 
-button {
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  background-color: #df6732;
-  color: #fff;
-  cursor: pointer;
-}
+    button {
+        padding: 15px; /* Adjusted padding for larger height */
+        border: none;
+        border-radius: 5px;
+        background-color: #df6732;
+        color: #fff;
+        cursor: pointer;
+        width: 100%; /* Make the button full-width */
+        margin-bottom: 10px; /* Add margin below the button */
+    }
 
-button:hover {
-  background-color: #040405;
-}
+    button:hover {
+        background-color: #0056b3;
+    }
+
+    .forgot-signup-container {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 5px;
+    }
+
+    .forgot-password,
+    .signup-link {
+        font-size: 14px;
+        text-decoration: none;
+        color: #000000;
+    }
+
+    .forgot-password:hover,
+    .signup-link:hover {
+        text-decoration: underline;
+    }
 .navbar {
-            background-color: #1c0d06;
-            color: #fff;
-            padding: 10px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-sizing: border-box;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 6px rgba(24, 2, 2, 0.822); /* Add drop shadow */
+    background-color: #1c0d06;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(24, 2, 2, 0.822); /* Add drop shadow */
+}
 
-        }
+.navbar h1 {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    font-family: sans-serif;
+}
 
-        .navbar h1 {
-            margin: 0;
-            display: flex;
-            align-items: center;
-            font-family: sans-serif;
-        }
+.toggle-btn {
+    font-size: 30px;
+    cursor: pointer;
+    margin-right: 20px;
+    width: auto;
+}
 
-        .toggle-btn {
-            font-size: 30px;
-            cursor: pointer;
-            margin-right: 20px;
-            width: auto;
-        }
+.dashboard {
+    position: fixed;
+    margin-top: -230px;
+    left: -250px;
+    width: 250px;
+    background-color: #1c0d06;
+    color: #fff;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: left 0.5s;
+    box-shadow: 0 4px 6px rgba(24, 2, 2, 0.822); /* Add drop shadow */
+}
 
-        .dashboard {
-            position: fixed;
-            margin-top: -230px;
-            left: -250px;
-            width: 250px;
-            background-color: #1c0d06;
-            color: #fff;
-            padding: 20px;
-            box-sizing: border-box;
-            transition: left 0.5s;
-            box-shadow: 0 4px 6px rgba(24, 2, 2, 0.822); /* Add drop shadow */
-            
+.dashboard a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 15px;
+}
 
-        }
+.dashboard a:hover {
+    text-decoration: underline;
+}
 
-        .dashboard a {
-            color: #fff;
-            text-decoration: none;
-            display: block;
-            margin-bottom: 10px;
-        }
+.dashboard-open .dashboard {
+    left: 0;
+}
 
-        .dashboard a:hover {
-            text-decoration: underline;
-        }
+.logo-img {
+    max-width: 13%;
+    height: auto;
+    margin-right: 15px;
+    margin-top: 1px;
+    vertical-align: middle;
+}
+.logo-img2 {
+  position: fixed;
+    width: 100%; /* Make the second logo image the same width as the container */
+    height: 50%;
+    margin-top: -10%;
+    right: -5%; /* Adjust the right margin as needed */
+    vertical-align: middle;
+}
+.login-link {
+        font-size: 14px;
+        text-decoration: none;
+        color: #000000;
+        text-align: center;
+    }
 
-        .dashboard-open .dashboard {
-            left: 0;
-        }
-
-        .logo-img {
-            max-width: 13%;
-            height: auto;
-            margin-right: 15px;
-            margin-top: 1px;
-            vertical-align: middle;
-        }
+.login-link:hover {
+        text-decoration: underline;
+    }
   </style>
 </head>
 <body>
@@ -133,81 +186,84 @@ button:hover {
         <div class="toggle-btn" onclick="toggleDashboard()">☰</div>
         <img src="logo2.png" alt="logo2" class="logo-img"> 
         At Your Service
-
     </h1>
 </div>
 
 <div class="dashboard">
-    <a href="Home.html">> Home</a>
-    <a href="LoginP.html">> Login</a>
-    <a href="Sign.html">> Sign Up</a>
-    <a href="#">> Settings</a>
-    <a href="#">> Our Service</a>
-    <a href="#">> Contact Us</a>
-    <!-- Add more links as needed -->
+  <a href="Home.html">> Home</a>
+  <a href="services.html">> Services</a>
+  <a href="contact.html">> Contact Us</a>
+  <a href="about.html">> About</a>
+  <a href="LoginP.html">> Account</a>
 </div>
 
-  <div class="container">
-    <form id="signupForm" class="signup-form">
-      <h2>Sign Up</h2>
-      <div class="input-group">
-        <label for="name">Name</label>
-        <input type="text" id="name" required>
-      </div>
-      <div class="input-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" required>
-      </div>
-      <div class="input-group">
-        <label for="password">Password</label>
-        <input type="password" id="password" required>
-      </div>
-      <div class="input-group">
-        <label for="confirmPassword">Confirm Password</label>
-        <input type="password" id="confirmPassword" required>
-      </div>
-      <button type="submit">Sign Up</button>
-    </form>
-  </div>
-  <script>
+<div class="logo-img2">
+  <img src="logo.png">
+</div>
+
+<div class="container">
+  <form id="signupForm" class="signup-form">
+    <h2>Sign Up</h2>
+    <div class="input-group">
+      <label for="name">Name</label>
+      <input type="text" id="name" required placeholder="Username">
+    </div>
+    <div class="input-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" required placeholder="example@gmail.com">
+    </div>
+    <div class="input-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" required placeholder="password">
+    </div>
+    <div class="input-group">
+      <label for="confirmPassword">Confirm Password</label>
+      <input type="password" id="confirmPassword" required placeholder="confirm password">
+    </div>
+    <button type="submit">Sign Up</button>
+    <a href="LoginP.html" class="login-link">Already have an account? Login</a>
+  </form>
+</div>
+
+<script>
 document.getElementById("signupForm").addEventListener("submit", function(event) {
-  event.preventDefault();
-  const name = document.getElementById("name").value;
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
-  const confirmPassword = document.getElementById("confirmPassword").value;
+event.preventDefault();
+const name = document.getElementById("name").value;
+const email = document.getElementById("email").value;
+const password = document.getElementById("password").value;
+const confirmPassword = document.getElementById("confirmPassword").value;
 
-  if (password !== confirmPassword) {
-    alert("Passwords do not match");
-    return;
-  }
+if (password !== confirmPassword) {
+  alert("Passwords do not match");
+  return;
+}
 
-  const userData = { name, email, password };
-  localStorage.setItem("userData", JSON.stringify(userData));
+const userData = { name, email, password };
+localStorage.setItem("userData", JSON.stringify(userData));
 
-  window.location.href = "LoginP.html";
+window.location.href = "LoginP.html";
 
-  // Perform actions like sending data to a server for account creation
-  // Example: Send this data to a backend server using AJAX/fetch
-  // Display a success message or redirect to a different page upon successful creation
-  console.log("Name:", name);
-  console.log("Email:", email);
-  console.log("Password:", password);
+// Perform actions like sending data to a server for account creation
+// Example: Send this data to a backend server using AJAX/fetch
+// Display a success message or redirect to a different page upon successful creation
+console.log("Name:", name);
+console.log("Email:", email);
+console.log("Password:", password);
 });
 function toggleDashboard() {
-            const dashboard = document.querySelector('.dashboard');
-            const navbar = document.querySelector('.navbar h1');
-            const currentLeft = parseInt(getComputedStyle(dashboard).left);
+          const dashboard = document.querySelector('.dashboard');
+          const navbar = document.querySelector('.navbar h1');
+          const currentLeft = parseInt(getComputedStyle(dashboard).left);
 
-            if (currentLeft === 0) {
-                dashboard.style.left = '-250px';
-                navbar.classList.remove('dashboard-open');
-            } else {
-                dashboard.style.left = '0';
-                navbar.classList.add('dashboard-open');
-            }
-        }
+          if (currentLeft === 0) {
+              dashboard.style.left = '-250px';
+              navbar.classList.remove('dashboard-open');
+          } else {
+              dashboard.style.left = '0';
+              navbar.classList.add('dashboard-open');
+          }
+      }
 
-  </script>
+</script>
 </body>
 </html>
