@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <style>
+        /* Add your custom styles here */
+        .slick-carousel {
+            width: 80%; /* Adjust the overall width as needed */
+            margin: 0 auto; /* Center the carousel */
+        }
+        .slick-slide {
+            text-align: center;
+            padding: 0;
+        }
+        .slick-frame {
+            cursor: pointer;
+            width: 90%; /* Adjust the width as needed */
+            margin: 0 auto 10px; /* Center the frame and add bottom margin */
+            position: relative;
+        }
+        .slick-frame img {
+            width: 90%; /* Make the image fill the frame */
+            height: auto; /* Maintain aspect ratio */      
+            display: block;      
+            margin: 0 auto; /* Center the image */
+        }
+
+        /* Custom styles for arrows */
+        .slick-prev, .slick-next {
+            position: absolute; /* Add absolute positioning */
+            top: 50%; /* Center vertically */
+            transform: translateY(-50%); /* Adjust for vertical centering */
+            z-index: 1; /* Set z-index to appear above the carousel content */
+            cursor: pointer; /* Set cursor to pointer for interaction */
+        }
+
+        .slick-prev {
+            content: '\2190'; /* Unicode arrow character for left arrow */
+        }
+
+        .slick-next {
+            content: '\2192'; /* Unicode arrow character for right arrow */
+        }
+
+        .slick-prev {
+            left: 20px; /* Adjust left position for the previous arrow */
+        }
+
+        .slick-next {
+            right: 20px; /* Adjust right position for the next arrow */
+        }
+    </style>
+    <title>Slick Carousel Example</title>
+</head>
+<body>
+    <!-- Your carousel content goes here -->
+    <div class="slick-carousel">
+        <div class="slick-frame" onclick="redirectToPage('page1.html')">
+            <img src="bg.jpg" alt="Slide 1">
+        </div>
+        <div class="slick-frame" onclick="redirectToPage('page2.html')">
+            <img src="bg.jpg" alt="Slide 2">
+        </div>
+        <div class="slick-frame" onclick="redirectToPage('page3.html')">
+            <img src="bg.jpg" alt="Slide 3">
+        </div>
+        <div class="slick-frame" onclick="redirectToPage('page1.html')">
+            <img src="bg.jpg" alt="Slide 4">
+        </div>
+        <div class="slick-frame" onclick="redirectToPage('page1.html')">
+            <img src="bg.jpg" alt="Slide 5">
+        </div>
+        <div class="slick-frame" onclick="redirectToPage('page1.html')">
+            <img src="bg.jpg" alt="Slide 6">
+        </div>
+        <!-- Add more slides as needed -->
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="your-custom-script.js"></script>
+
+    <script>
+        function redirectToPage(pageUrl) {
+            window.location.href = pageUrl;
+        }
+        $(document).ready(function(){
+            $('.slick-carousel').slick({
+                autoplay: true,
+                autoplaySpeed: 1000, /* Set the speed in milliseconds (5 seconds) */
+                dots: true, /* Set to true if you want navigation dots */
+                arrows: true, /* Set to true if you want navigation arrows */
+                infinite: true,
+                speed: 500,
+                slidesToShow: 3,
+                slidesToScroll: 1
+            });
+        });
+    </script>
+</body>
+</html>

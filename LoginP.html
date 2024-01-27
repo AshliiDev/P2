@@ -12,7 +12,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #f0f0f0;
+  background-color: #120803;
 }
 
 .container {
@@ -49,7 +49,7 @@ button {
   padding: 10px;
   border: none;
   border-radius: 5px;
-  background-color: #007bff;
+  background-color: #df6732;
   color: #fff;
   cursor: pointer;
 }
@@ -62,15 +62,101 @@ button:hover {
   font-size: 14px;
   margin-left: 10px; 
   text-decoration: none; 
-  color: #007bff; 
+  color: #000000; 
 }
 
 .forgot-password:hover {
   text-decoration: underline; 
 }
+.navbar {
+            background-color: #1c0d06;
+            color: #fff;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-sizing: border-box;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(24, 2, 2, 0.822); /* Add drop shadow */
+
+        }
+
+        .navbar h1 {
+            margin: 0;
+            display: flex;
+            align-items: center;
+            font-family: sans-serif;
+        }
+
+        .toggle-btn {
+            font-size: 30px;
+            cursor: pointer;
+            margin-right: 20px;
+            width: auto;
+        }
+
+        .dashboard {
+            position: fixed;
+            margin-top: -230px;
+            left: -250px;
+            width: 250px;
+            background-color: #1c0d06;
+            color: #fff;
+            padding: 20px;
+            box-sizing: border-box;
+            transition: left 0.5s;
+            box-shadow: 0 4px 6px rgba(24, 2, 2, 0.822); /* Add drop shadow */
+            
+
+        }
+
+        .dashboard a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .dashboard a:hover {
+            text-decoration: underline;
+        }
+
+        .dashboard-open .dashboard {
+            left: 0;
+        }
+
+        .logo-img {
+            max-width: 13%;
+            height: auto;
+            margin-right: 15px;
+            margin-top: 1px;
+            vertical-align: middle;
+        }
   </style>
 </head>
 <body>
+  <div class="navbar">
+    <h1 class="dashboard-close">
+        <div class="toggle-btn" onclick="toggleDashboard()">☰</div>
+        <img src="logo2.png" alt="logo2" class="logo-img"> 
+        At Your Service
+
+    </h1>
+</div>
+
+<div class="dashboard">
+    <a href="Home.html">> Home</a>
+    <a href="LoginP.html">> Login</a>
+    <a href="Sign.html">> Sign Up</a>
+    <a href="#">> Settings</a>
+    <a href="#">> Our Service</a>
+    <a href="#">> Contact Us</a>
+    <!-- Add more links as needed -->
+</div>
+
   <div class="container">
     <form id="loginForm" class="login-form">
       <h2>Login</h2>
@@ -82,7 +168,7 @@ button:hover {
         <label for="password">Password</label>
         <input type="password" id="password" required>
       </div>
-      <button type="submit">Login</button>
+      <button type="submit" onclick="">Login</button>
       <a href="resetpass.html" class="forgot-password">Forgot Password?</a>
     </form>
   </div>
@@ -97,11 +183,26 @@ button:hover {
   
     if (savedUserData && savedUserData.email === loginEmail && savedUserData.password === loginPassword) {
       // Successful login, redirect to the 'hello world' page
-      window.location.href = "helloworld.html";
+      window.location.href = "Home.html";
     } else {
       alert("Invalid credentials");
     }
   });
+
+  function toggleDashboard() {
+            const dashboard = document.querySelector('.dashboard');
+            const navbar = document.querySelector('.navbar h1');
+            const currentLeft = parseInt(getComputedStyle(dashboard).left);
+
+            if (currentLeft === 0) {
+                dashboard.style.left = '-250px';
+                navbar.classList.remove('dashboard-open');
+            } else {
+                dashboard.style.left = '0';
+                navbar.classList.add('dashboard-open');
+            }
+        }
+
   </script>
 </body>
 </html>

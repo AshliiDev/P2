@@ -12,8 +12,75 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #f0f0f0;
+  background-color: #120803;
 }
+.navbar {
+            background-color: #1c0d06;
+            color: #fff;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-sizing: border-box;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(24, 2, 2, 0.822); /* Add drop shadow */
+
+        }
+
+.navbar h1 {
+            margin: 0;
+            display: flex;
+            align-items: center;
+            font-family: sans-serif;
+        }
+
+.toggle-btn {
+            font-size: 30px;
+            cursor: pointer;
+            margin-right: 20px;
+            width: auto;
+        }
+
+.dashboard {
+            position: fixed;
+            margin-top: -230px;
+            left: -250px;
+            width: 250px;
+            background-color: #1c0d06;
+            color: #fff;
+            padding: 20px;
+            box-sizing: border-box;
+            transition: left 0.5s;
+            box-shadow: 0 4px 6px rgba(24, 2, 2, 0.822); /* Add drop shadow */
+            
+
+        }
+
+.dashboard a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+.dashboard a:hover {
+            text-decoration: underline;
+        }
+
+        .dashboard-open .dashboard {
+            left: 0;
+        }
+
+.logo-img {
+            max-width: 13%;
+            height: auto;
+            margin-right: 15px;
+            margin-top: 1px;
+            vertical-align: middle;
+        }
 
 .container {
   width: 350px;
@@ -50,18 +117,35 @@ button {
   padding: 10px;
   border: none;
   border-radius: 5px;
-  background-color: #007bff;
+  background-color: #df6732;
   color: #fff;
   cursor: pointer;
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #000000;
 }
 
   </style>
 </head>
 <body>
+  <div class="navbar">
+    <h1 class="dashboard-close">
+        <div class="toggle-btn" onclick="toggleDashboard()">☰</div>
+        <img src="logo2.png" alt="logo2" class="logo-img"> 
+        At Your Service
+
+    </h1>
+</div>
+  <div class="dashboard">
+    <a href="Home.html">> Home</a>
+    <a href="LoginP.html">> Login</a>
+    <a href="Sign.html">> Sign Up</a>
+    <a href="#">> Settings</a>
+    <a href="#">> Our Service</a>
+    <a href="#">> Contact Us</a>
+    <!-- Add more links as needed -->
+</div>
   <div class="container">
     <form id="resetPasswordForm" class="reset-password-form">
       <h2>Reset Password</h2>
@@ -81,6 +165,20 @@ button:hover {
     </form>
   </div>
   <script>
+    function toggleDashboard() {
+            const dashboard = document.querySelector('.dashboard');
+            const navbar = document.querySelector('.navbar h1');
+            const currentLeft = parseInt(getComputedStyle(dashboard).left);
+
+            if (currentLeft === 0) {
+                dashboard.style.left = '-250px';
+                navbar.classList.remove('dashboard-open');
+            } else {
+                dashboard.style.left = '0';
+                navbar.classList.add('dashboard-open');
+            }
+        }
+
 document.getElementById("resetPasswordForm").addEventListener("submit", function(event) {
   event.preventDefault();
   const resetEmail = document.getElementById("resetEmail").value;
@@ -109,9 +207,7 @@ document.getElementById("resetPasswordForm").addEventListener("submit", function
   } else {
     alert("Invalid email");
   }
-});
-
-
+}); 
   </script>
 </body>
 </html>
